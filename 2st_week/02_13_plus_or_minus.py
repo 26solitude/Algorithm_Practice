@@ -18,13 +18,33 @@
 #             count += 1
 #     return count
 
+# def solution(numbers, target):
+#     if not numbers and target == 0:
+#         return 1
+#     elif not numbers:
+#         return 0
+#     else:
+#         return solution(numbers[1:], target - numbers[0]) + solution(numbers[1:], target + numbers[0])
+
+
 def solution(numbers, target):
-    if not numbers and target == 0:
-        return 1
-    elif not numbers:
-        return 0
-    else:
-        return solution(numbers[1:], target - numbers[0]) + solution(numbers[1:], target + numbers[0])
+    res = []
+
+    def make_all_cases(numbers, sum, index):
+        if index == len(numbers):
+            res.append(sum)
+            return
+        make_all_cases(numbers, sum + numbers[index], index + 1)
+        make_all_cases(numbers, sum - numbers[index], index + 1)
+
+    make_all_cases(numbers, 0, 0)
+
+    count = 0
+    for case in res:
+        if case == target:
+            count += 1
+
+    return count
 
 
 print(solution([1, 1, 1, 1, 1], 3))
