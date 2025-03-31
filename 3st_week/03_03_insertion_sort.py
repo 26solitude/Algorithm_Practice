@@ -24,10 +24,9 @@ def insertion_sort(array):
             array[index + 1] = array[index]
             index -= 1
 
-        array[index+1] = key
+        array[index + 1] = key
 
     return array
-
 
 
 # insertion_sort(input)

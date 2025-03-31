@@ -1,5 +1,6 @@
 from collections import Counter
 
+
 # def find_not_repeating_first_character(string):
 #     alphabet = [0] * 26
 #     for char in string:

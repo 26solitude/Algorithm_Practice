@@ -1,5 +1,6 @@
 input = 2024
 
+
 # def find_prime_list_under_number(number):
 #     ans = []
 #     for i in range(2, number + 1):
@@ -10,9 +11,6 @@ input = 2024
 #             ans.append(i)
 #
 #     return ans
-
-
-import math
 
 
 # def find_prime_list_under_number(number):

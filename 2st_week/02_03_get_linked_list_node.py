@@ -17,7 +17,7 @@ class LinkedList:
     def print_all(self):
         temp = self.head
         while temp is not None:
-            print(temp.data, end = " -> " if temp.next else "")
+            print(temp.data, end=" -> " if temp.next else "")
             temp = temp.next
         print()
 

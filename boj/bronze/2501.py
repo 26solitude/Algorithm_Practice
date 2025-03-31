@@ -8,4 +8,4 @@ for i in range(1, N + 1):
 if len(res) < K:
     print(0)
 else:
-    print(res[K-1])
+    print(res[K - 1])

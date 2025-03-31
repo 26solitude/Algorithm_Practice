@@ -36,9 +36,10 @@ class LinkedList:
     def print(self):
         temp = self.head
         while temp is not None:
-            print(temp.data, end = " -> " if temp.next else "")
+            print(temp.data, end=" -> " if temp.next else "")
             temp = temp.next
         print()
+
 
 linked_list = LinkedList(5)
 linked_list.append(3)

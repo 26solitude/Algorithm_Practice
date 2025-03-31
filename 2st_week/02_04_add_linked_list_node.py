@@ -97,7 +97,6 @@ class LinkedList:
     #         new_node.next = next_node
 
 
-
 linked_list = LinkedList(5)
 linked_list.append(12)
 linked_list.append(7)

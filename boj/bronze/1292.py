@@ -1,5 +1,3 @@
-import math
-
 start, end = map(int, input().split())
 arr = []
 num = 1
@@ -11,5 +9,4 @@ while True:
     if len(arr) > end:
         break
 
-print(sum(arr[start-1:end]))
-
+print(sum(arr[start - 1:end]))

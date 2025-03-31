@@ -7,7 +7,7 @@ memo = {
 def fibo(n, memo):
     if n == 0:
         return 1
-    
+
     if n in memo:
         return memo[n]
 
