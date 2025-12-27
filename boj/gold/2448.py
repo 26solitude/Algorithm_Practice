@@ -1,32 +1,29 @@
 import sys
 
-input = sys.stdin.readline
 
-n = int(input())
+def solve():
+    n = int(sys.stdin.readline())
 
-board = [[' ' for _ in range(2 * n)] for _ in range(n)]
+    star = ['  *  ', ' * * ', '*****']
+
+    def make_stars(n):
+        if n == 3:
+            return star
+
+        prev_stars = make_stars(n // 2)
+        padding = ' ' * (n // 2)
+
+        now_stars = []
+
+        for line in prev_stars:
+            now_stars.append(padding + line + padding)
+
+        for line in prev_stars:
+            now_stars.append(line + ' ' + line)
+
+        return now_stars
+
+    print('\n'.join(make_stars(n)))
 
 
-def stamp_star(r, c):
-    board[r][c] = '*'
-    board[r + 1][c + 1] = '*'
-    board[r + 1][c - 1] = '*'
-    for i in range(-2, 3):
-        board[r + 2][c + i] = '*'
-
-
-def make_star(n, r, c):
-    if n == 3:
-        stamp_star(r, c)
-        return
-
-    next_n = n // 2
-
-    make_star(next_n, r, c)
-    make_star(next_n, r + next_n, c - next_n)
-    make_star(next_n, r + next_n, c + next_n)
-
-
-make_star(n, 0, n-1)
-for row in board:
-    print(''.join(row))
+solve()
